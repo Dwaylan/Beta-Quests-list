@@ -107,16 +107,15 @@ const tick = () =>{
     // Creating a variable to convert milliseconds to seconds
     const seconds = now.getSeconds()
 
-    // Additional formatting for year
-    const year = dateFns.format(now, 'YYYY')
+    // Additional formatting for day of the week, followed by day/month/year
+    const date = dateFns.format(now, 'dddd, Do, MMMM, YYYY')
 
     // Creating an HTML template with template literals to append the time to the DOM
     const html = `
         <span>${hours}</span> :
         <span>${minutes}</span> :
         <span>${seconds}</span>
-
-        <span>${year}</span>
+        <span>${date}</span>
     `
     // injecting the new html template to the DOM html
     clock.innerHTML = html
